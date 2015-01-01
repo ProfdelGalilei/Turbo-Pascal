@@ -1,0 +1,22 @@
+Program calcfatt;
+uses crt;
+
+var
+fattoriale: REAL;
+fat, num : INTEGER;
+risp : CHAR;
+
+begin
+  repeat
+    write('Inserisci un numero intero: ');
+    readln(num);
+    if num < 0 then writeln('Il fattoriale di un numero negativo non esiste')
+    else begin
+    fattoriale := 1;
+    for fat:=1 to num do fattoriale := fattoriale*fat;
+    writeln('Il fattoriale Š ', fattoriale:10:0);
+    end;
+    writeln('Vuoi inserire un altro numero? S/N');
+    readln(risp);
+  until (risp <> 's') and (risp <> 'S');
+end.
