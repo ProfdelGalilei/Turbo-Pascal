@@ -1,0 +1,72 @@
+PROGRAM ArrayComplicati;
+USES crt;
+
+CONST N = 10;
+
+VAR
+A : ARRAY[1..N] OF INTEGER;
+B : ARRAY[1..N] OF REAL;
+C : ARRAY[1..N] OF REAL;
+
+PROCEDURE Caricamento;
+VAR
+i : INTEGER;
+BEGIN
+     RANDOMIZE;
+     FOR i := 1 TO N DO
+         A[i] := RANDOM(20)+1;
+END;
+
+PROCEDURE Visualizza;
+VAR
+i : INTEGER;
+BEGIN
+     FOR i := 1 TO N DO
+         Write(A[i], ' ');
+     Writeln;
+END;
+
+PROCEDURE NumPari;
+VAR
+i : INTEGER;
+BEGIN
+     Write('Numeri pari: ');
+     FOR i := 1 TO N DO
+         IF A[i] mod 2 = 0 THEN
+            Write(A[i], ' ');
+     Writeln;
+END;
+
+PROCEDURE Reciproci;
+VAR
+i : INTEGER;
+BEGIN
+     Write('Reciproci: ');
+     FOR i := 1 TO N DO
+     BEGIN
+         B[i] := 1 / A[i];
+         Write(B[i]:5:2, ' ');
+     END;
+END;
+
+PROCEDURE Opposti;
+VAR
+i : INTEGER;
+BEGIN
+    Write('Opposti: ');
+    FOR i := 1 TO N DO
+    BEGIN
+         C[i] := -B[i];
+         Write(C[i]:5:2, ' ');
+    END;
+END;
+
+BEGIN
+    Caricamento;
+    Visualizza;
+    NumPari;
+    Reciproci;
+    Opposti;
+    Readln;
+END.
+
