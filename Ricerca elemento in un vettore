@@ -1,0 +1,23 @@
+PROGRAM ricerca;
+USES crt;
+
+VAR
+arr : array[1..20] OF INTEGER;
+i, n : INTEGER;
+
+BEGIN
+     RANDOMIZE;
+
+     FOR i := 1 TO 20 DO
+         arr[i] := RANDOM(10);
+
+     WRITE('Inserisci il numero da cercare: ');
+     READLN(n);
+
+     FOR i := 1 TO 20 DO
+         IF arr[i] = n THEN
+            WRITELN('Numero trovato alla posizione ', i);
+
+     READLN;
+
+END.
